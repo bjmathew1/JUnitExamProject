@@ -39,6 +39,7 @@ public class ListItemsTest {
 		driver = BrowserFactory.init();
 		
 	}
+	
 	@Test
 	public void validateAllitemsCheckBoxSelectedOrNot() throws Exception {		
 		listItemsPage = PageFactory.initElements(driver, ListItemsPage.class);
@@ -92,8 +93,15 @@ public class ListItemsTest {
 			System.out.println("\"Toggle All & Remove\" items have been removed. Items do not exist");
 			
 		}
+	}
+	
+	@Test
+	public void zdeletecategories() throws Exception {
+	listItemsPage = PageFactory.initElements(driver, ListItemsPage.class);
+	listItemsPage.removeCategoryName();
 
-			}	
+	}	
+	
 	@After
 	public void tearDown() {
 		driver.close();
